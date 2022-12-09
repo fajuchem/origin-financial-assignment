@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/origin-financial-assignment/static/css/main.e04b93bd.css",
+    "main.js": "/origin-financial-assignment/static/js/main.2ac2d5cc.js",
+    "static/js/787.7048261d.chunk.js": "/origin-financial-assignment/static/js/787.7048261d.chunk.js",
+    "static/media/mobile-buy-a-house.svg": "/origin-financial-assignment/static/media/mobile-buy-a-house.a2c02f55c703f9f4c89f2ae0da0fa50d.svg",
+    "static/media/buy-a-house.svg": "/origin-financial-assignment/static/media/buy-a-house.3842969a62e019635509f39a0f8ab7a9.svg",
+    "static/media/logo-origin.svg": "/origin-financial-assignment/static/media/logo-origin.7bfc036ea98d9587fdfd2464a523e5ea.svg",
+    "static/media/mobile-logo-origin.svg": "/origin-financial-assignment/static/media/mobile-logo-origin.1276a62e1e6d5a1298d36a71fa110522.svg",
+    "static/media/dollar-sign.svg": "/origin-financial-assignment/static/media/dollar-sign.75cdc5dab6ef18e7eed8cfbf45b94517.svg",
+    "index.html": "/origin-financial-assignment/index.html",
+    "static/media/chevron-right.svg": "/origin-financial-assignment/static/media/chevron-right.8a594fae21adf5b8000028e93db85bb2.svg",
+    "static/media/chevron-left.svg": "/origin-financial-assignment/static/media/chevron-left.4e4bfb1145c65849ee04b0fb0c5eb924.svg",
+    "main.e04b93bd.css.map": "/origin-financial-assignment/static/css/main.e04b93bd.css.map",
+    "main.2ac2d5cc.js.map": "/origin-financial-assignment/static/js/main.2ac2d5cc.js.map",
+    "787.7048261d.chunk.js.map": "/origin-financial-assignment/static/js/787.7048261d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e04b93bd.css",
+    "static/js/main.2ac2d5cc.js"
+  ]
+}
