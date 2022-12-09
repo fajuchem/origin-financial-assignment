@@ -1,4 +1,5 @@
-project address: https://fajuchem.github.io/origin-financial-assignment/ <br />
+### project address: 
+https://fajuchem.github.io/origin-financial-assignment/ <br />
 
 ### decision:
 
@@ -13,12 +14,11 @@ project address: https://fajuchem.github.io/origin-financial-assignment/ <br />
 - display more digits for monthly amount depending on the screen size, for exmaple compact for mobile and keep real value for desktop.
 - create a few generic components like card and button.
 
-## Available Scripts
+### Available Scripts
 
-### `yarn start`
-
-### `yarn test`
-
-### `yarn test:coverage`
-
-### `yarn build`
+```
+yarn start
+yarn test
+yarn test:coverage
+yarn build
+``` 
