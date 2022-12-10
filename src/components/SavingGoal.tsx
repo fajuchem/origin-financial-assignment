@@ -20,7 +20,7 @@ export function SavingGoal() {
       <div className="relative mx-auto max-w-lg rounded-lg text-brand-primary text-xl pb-6 sm:pt-12 pt-8">
         Let's plan our <span className="font-bold">saving goal.</span>
       </div>
-      <div className="relative bg-white px-6 pt-9 pb-10 sm:px-10 sm:mx-auto sm:max-w-lg rounded-lg">
+      <div className="relative bg-white px-6 pt-9 pb-10 sm:px-10 sm:mx-auto sm:max-w-lg rounded-lg shadow-[0_16px_32px_rgba(30,42,50,0.08)]">
         <div className="flex">
           <div className="sm:hidden">
             <MobileBuyAHouse />
