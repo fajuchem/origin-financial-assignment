@@ -11,7 +11,7 @@ describe('<DateInput />', () => {
   it('add a month when clicked on next button', () => {
     const state = new Date();
     const setState = jest.fn();
-    render(<DateInput label="date" value={state} setValue={setState} />);
+    render(<DateInput label="date" value={state} onChange={setState} />);
 
     userEvent.click(screen.getByTestId('date-input-next'));
 
@@ -21,7 +21,7 @@ describe('<DateInput />', () => {
   it('sub a month when clicked on previous button', () => {
     const state = new Date('2021-02-08T22:27:44.000Z');
     const setState = jest.fn();
-    render(<DateInput label="date" value={state} setValue={setState} />);
+    render(<DateInput label="date" value={state} onChange={setState} />);
 
     userEvent.click(screen.getByTestId('date-input-previous'));
 
@@ -31,7 +31,7 @@ describe('<DateInput />', () => {
   it('can only select future months', () => {
     const state = new Date();
     const setState = jest.fn();
-    render(<DateInput label="date" value={state} setValue={setState} />);
+    render(<DateInput label="date" value={state} onChange={setState} />);
 
     const button = screen.getByTestId('date-input-previous');
     userEvent.click(button);
@@ -43,7 +43,7 @@ describe('<DateInput />', () => {
   it('update month and year name', () => {
     const state = new Date();
     const setState = jest.fn();
-    render(<DateInput label="date" value={state} setValue={setState} />);
+    render(<DateInput label="date" value={state} onChange={setState} />);
 
     userEvent.click(screen.getByTestId('date-input-next'));
 
@@ -55,7 +55,7 @@ describe('<DateInput />', () => {
   it('arrow keys change month when input is focused', () => {
     const state = new Date('2021-01-08T22:27:44.000Z');
     const setState = jest.fn();
-    render(<DateInput label="date" value={state} setValue={setState} />);
+    render(<DateInput label="date" value={state} onChange={setState} />);
 
     const div = screen.getByTestId('date-input-div');
 

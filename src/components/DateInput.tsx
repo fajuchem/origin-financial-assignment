@@ -9,10 +9,10 @@ import {
 interface Props {
   label: string;
   value: Date;
-  setValue: (value: Date) => void;
+  onChange: (value: Date) => void;
 }
 
-export function DateInput({ label, value, setValue }: Props) {
+export function DateInput({ label, value, onChange }: Props) {
   return (
     <div className="w-auto sm:w-80">
       <label htmlFor="reachDate" className="text-sm text-blue-gray-900">
@@ -25,16 +25,16 @@ export function DateInput({ label, value, setValue }: Props) {
         tabIndex={0}
         onKeyUp={(e) => {
           if (e.key === 'ArrowRight') {
-            setValue(addOneMonthFromDate(value));
+            onChange(addOneMonthFromDate(value));
           }
           if (e.key === 'ArrowLeft') {
-            setValue(subOneMonthFromDate(value));
+            onChange(subOneMonthFromDate(value));
           }
         }}
       >
         <button
           disabled={diffInMonthsFromToday(value) <= 1}
-          onClick={() => setValue(subOneMonthFromDate(value))}
+          onClick={() => onChange(subOneMonthFromDate(value))}
           data-testid="date-input-previous"
           tabIndex={-1}
         >
@@ -53,7 +53,7 @@ export function DateInput({ label, value, setValue }: Props) {
         </div>
         <button
           tabIndex={-1}
-          onClick={() => setValue(addOneMonthFromDate(value))}
+          onClick={() => onChange(addOneMonthFromDate(value))}
           data-testid="date-input-next"
         >
           <ChevronRight />

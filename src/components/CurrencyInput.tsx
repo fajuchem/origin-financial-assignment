@@ -4,12 +4,12 @@ import { NumericFormat } from 'react-number-format';
 interface Props {
   label: string;
   value: number;
-  setValue: (value: number) => void;
+  onChange: (value: number) => void;
 }
 
 const MAX_NUMBER = 1000000000000000;
 
-export function CurrencyInput({ label, value, setValue }: Props) {
+export function CurrencyInput({ label, value, onChange }: Props) {
   return (
     <div>
       <label htmlFor="amount" className="text-sm text-blue-gray-900">
@@ -31,7 +31,7 @@ export function CurrencyInput({ label, value, setValue }: Props) {
           className="text-2xl font-bold text-blue-gray-600 block w-full pl-10 px-3 py-3 rounded-md border border-solid border-light-gray focus:outline focus:outline-2 focus:outline-brand-second"
           onValueChange={(values) => {
             const { floatValue } = values;
-            setValue(floatValue || 0);
+            onChange(floatValue || 0);
           }}
           allowLeadingZeros
           thousandSeparator=","

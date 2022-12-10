@@ -6,7 +6,7 @@ describe('<CurrencyInput />', () => {
   it('display formatted value', () => {
     const state = 0;
     const setState = jest.fn();
-    render(<CurrencyInput label="amount" value={state} setValue={setState} />);
+    render(<CurrencyInput label="amount" value={state} onChange={setState} />);
 
     const input = screen.getByTestId('currency-input');
     userEvent.click(input);
@@ -19,7 +19,7 @@ describe('<CurrencyInput />', () => {
   it('only allow numbers', () => {
     const state = 0;
     const setState = jest.fn();
-    render(<CurrencyInput label="amount" value={state} setValue={setState} />);
+    render(<CurrencyInput label="amount" value={state} onChange={setState} />);
 
     const input = screen.getByTestId('currency-input');
     userEvent.click(input);
@@ -32,7 +32,7 @@ describe('<CurrencyInput />', () => {
   it('doesnt allow really big number', () => {
     const state = 0;
     const setState = jest.fn();
-    render(<CurrencyInput label="amount" value={state} setValue={setState} />);
+    render(<CurrencyInput label="amount" value={state} onChange={setState} />);
 
     const input = screen.getByTestId('currency-input');
     userEvent.click(input);

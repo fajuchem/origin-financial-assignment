@@ -38,12 +38,12 @@ export function SavingGoal() {
           <CurrencyInput
             label="Total amount"
             value={amount}
-            setValue={setAmount}
+            onChange={(v) => setAmount(v)}
           />
           <DateInput
             label="Reach goal by"
             value={reachDate}
-            setValue={setReachDate}
+            onChange={(v) => setReachDate(v)}
           />
         </div>
 
