@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { DateInput } from './DateInput';
+import { DateInput } from './index';
 
 describe('<DateInput />', () => {
   beforeAll(() => {
@@ -67,5 +67,20 @@ describe('<DateInput />', () => {
     expect(setState).toBeCalledWith(new Date('2021-02-08T22:27:44.000Z'));
     userEvent.keyboard('[ArrowLeft]');
     expect(setState).toBeCalledWith(new Date('2020-12-08T22:27:44.000Z'));
+  });
+
+  it('arrow keys can only select future months', () => {
+    const state = new Date('2021-01-08T22:27:44.000Z');
+    const setState = jest.fn();
+    render(<DateInput label="date" value={state} onChange={setState} />);
+
+    const div = screen.getByTestId('date-input-div');
+
+    div.focus();
+
+    expect(div).toHaveFocus();
+
+    userEvent.keyboard('[ArrowLeft]');
+    expect(setState).not.toBeCalled();
   });
 });

@@ -1,10 +1,9 @@
-import { ReactComponent as ChevronLeft } from '../assets/icons/chevron-left.svg';
-import { ReactComponent as ChevronRight } from '../assets/icons/chevron-right.svg';
 import {
   addOneMonthFromDate,
   diffInMonthsFromToday,
   subOneMonthFromDate,
-} from '../infra/date';
+} from '../../infra/date';
+import { Icon } from '../Icon';
 
 interface Props {
   label: string;
@@ -20,6 +19,7 @@ export function DateInput({ label, value, onChange }: Props) {
       </label>
 
       <div
+        id="reachDate"
         data-testid="date-input-div"
         className="flex flex-row justify-between mt-1 px-3 rounded-lg border border-solid border-light-gray focus:outline focus:outline-2 focus:outline-brand-second"
         tabIndex={0}
@@ -27,7 +27,7 @@ export function DateInput({ label, value, onChange }: Props) {
           if (e.key === 'ArrowRight') {
             onChange(addOneMonthFromDate(value));
           }
-          if (e.key === 'ArrowLeft') {
+          if (e.key === 'ArrowLeft' && diffInMonthsFromToday(value) > 1) {
             onChange(subOneMonthFromDate(value));
           }
         }}
@@ -38,7 +38,7 @@ export function DateInput({ label, value, onChange }: Props) {
           data-testid="date-input-previous"
           tabIndex={-1}
         >
-          <ChevronLeft />
+          <Icon name="chevron-left" title="previous month" />
         </button>
         <div
           className="flex flex-col items-center text-base text-blue-gray-900 py-1"
@@ -56,7 +56,7 @@ export function DateInput({ label, value, onChange }: Props) {
           onClick={() => onChange(addOneMonthFromDate(value))}
           data-testid="date-input-next"
         >
-          <ChevronRight />
+          <Icon name="chevron-right" title="next month" />
         </button>
       </div>
     </div>

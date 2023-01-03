@@ -10,19 +10,19 @@ describe('date', () => {
     jest.setSystemTime(new Date('2020-12-08T22:27:44.000Z'));
   });
 
-  it('sub a month when clicked on next button', () => {
+  it('subtract a month from a date', () => {
     const date = subOneMonthFromDate(new Date('2020-12-08T22:27:44.000Z'));
 
     expect(date).toEqual(new Date('2020-11-08T22:27:44.000Z'));
   });
 
-  it('add a month when clicked on next button', () => {
+  it('add a month from a date', () => {
     const date = addOneMonthFromDate(new Date('2020-12-08T22:27:44.000Z'));
 
     expect(date).toEqual(new Date('2021-01-08T22:27:44.000Z'));
   });
 
-  it('diff in months', () => {
+  it('return the difference in months from a specific date and today', () => {
     expect(diffInMonthsFromToday(new Date('2022-12-08T22:27:44.000Z'))).toEqual(
       24
     );

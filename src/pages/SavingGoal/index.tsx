@@ -1,19 +1,13 @@
-import { useEffect, useState } from 'react';
-import { ReactComponent as BuyAHouse } from '../assets/icons/buy-a-house.svg';
-import { ReactComponent as MobileBuyAHouse } from '../assets/icons/mobile-buy-a-house.svg';
-import { diffInMonthsFromToday, newDateNextMonth } from '../infra/date';
-import { CurrencyInput } from './CurrencyInput';
-import { DateInput } from './DateInput';
+import { useState } from 'react';
+import { diffInMonthsFromToday, newDateNextMonth } from '../../infra/date';
+import { CurrencyInput } from '../../components/CurrencyInput';
+import { DateInput } from '../../components/DateInput';
+import { Icon } from '../../components/Icon';
 
 export function SavingGoal() {
   const [amount, setAmount] = useState(0);
   const [reachDate, setReachDate] = useState(newDateNextMonth());
-  const [monthlyAmount, setMonthlyAmount] = useState(0);
-
-  useEffect(
-    () => setMonthlyAmount(amount / diffInMonthsFromToday(reachDate)),
-    [reachDate, amount]
-  );
+  const monthlyAmount = amount / diffInMonthsFromToday(reachDate);
 
   return (
     <>
@@ -22,11 +16,8 @@ export function SavingGoal() {
       </div>
       <div className="relative bg-white px-6 pt-9 pb-10 sm:px-10 sm:mx-auto sm:max-w-lg rounded-lg shadow-[0_16px_32px_rgba(30,42,50,0.08)]">
         <div className="flex">
-          <div className="sm:hidden">
-            <MobileBuyAHouse />
-          </div>
-          <div className="hidden sm:block">
-            <BuyAHouse />
+          <div>
+            <Icon name="buy-a-house" title="buy a house" />
           </div>
           <div className="ml-4">
             <div className="text-gray-900 font-bold text-2xl">Buy a house</div>

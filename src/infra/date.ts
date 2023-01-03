@@ -17,11 +17,10 @@ export function addOneMonthFromDate(date: Date): Date {
 }
 
 export function diffInMonthsFromToday(date: Date): number {
-  const today = newDateNextMonth();
+  const today = new Date();
 
   return (
     (date.getFullYear() - today.getFullYear()) * 12 +
-    (date.getMonth() - today.getMonth()) +
-    1
+    (date.getMonth() - today.getMonth())
   );
 }

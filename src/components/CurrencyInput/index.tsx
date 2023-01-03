@@ -1,5 +1,5 @@
-import { ReactComponent as DollarSign } from '../assets/icons/dollar-sign.svg';
 import { NumericFormat } from 'react-number-format';
+import { Icon } from '../Icon';
 
 interface Props {
   label: string;
@@ -18,9 +18,12 @@ export function CurrencyInput({ label, value, onChange }: Props) {
 
       <div className="relative mt-1">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          <DollarSign />
+          <Icon name="dollar-sign" />
         </div>
         <NumericFormat
+          name="amount"
+          id="amount"
+          decimalScale={2}
           data-testid="currency-input"
           allowNegative={false}
           isAllowed={(values) => {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { CurrencyInput } from './CurrencyInput';
+import { CurrencyInput } from './index';
 
 describe('<CurrencyInput />', () => {
   it('display formatted value', () => {
@@ -8,7 +8,7 @@ describe('<CurrencyInput />', () => {
     const setState = jest.fn();
     render(<CurrencyInput label="amount" value={state} onChange={setState} />);
 
-    const input = screen.getByTestId('currency-input');
+    const input = screen.getByLabelText('amount');
     userEvent.click(input);
     userEvent.keyboard('10000');
 
@@ -21,7 +21,7 @@ describe('<CurrencyInput />', () => {
     const setState = jest.fn();
     render(<CurrencyInput label="amount" value={state} onChange={setState} />);
 
-    const input = screen.getByTestId('currency-input');
+    const input = screen.getByLabelText('amount');
     userEvent.click(input);
     userEvent.keyboard('-asdf1');
 
@@ -34,7 +34,7 @@ describe('<CurrencyInput />', () => {
     const setState = jest.fn();
     render(<CurrencyInput label="amount" value={state} onChange={setState} />);
 
-    const input = screen.getByTestId('currency-input');
+    const input = screen.getByLabelText('amount');
     userEvent.click(input);
     userEvent.keyboard('1000000000000000');
 

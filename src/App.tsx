@@ -1,5 +1,5 @@
-import { Header } from './components/Header';
-import { SavingGoal } from './components/SavingGoal';
+import { Header } from './layouts/Header';
+import { SavingGoal } from './pages/SavingGoal';
 
 function App() {
   return (
